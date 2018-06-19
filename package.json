@@ -16,7 +16,9 @@
     "prettier": "prettier \"**/*.{js,json,md}\" --write",
     "start": "node lib/renovate",
     "test-dirty": "git diff --exit-code",
-    "test": "yarn prettier --list-different && yarn lint && yarn jest"
+    "test": "yarn prettier --list-different && yarn lint && yarn jest",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -97,7 +99,8 @@
     "traverse": "0.6.6",
     "upath": "1.0.4",
     "vso-node-api": "6.5.0",
-    "yarn": "1.6.0"
+    "yarn": "1.6.0",
+    "snyk": "^1.83.0"
   },
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "6.26.0",
@@ -181,5 +184,6 @@
         }
       ]
     }
-  }
+  },
+  "snyk": true
 }
